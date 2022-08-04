@@ -1,0 +1,44 @@
+﻿spawnEnemiesTest()
+* This will test whether enemies are being spawned.
+* It tests the enemy class and enemy controller class to make sure that the two components are properly communicating.
+* It will verify that the code works as expected by making sure that the controller class’s methods are properly initializing the enemies.
+
+enemiesOnPathTest()
+* This will test whether enemies are following the path to the monolith
+* It tests the enemy class and its interaction with the path component of the game screen to verify that the enemy stays on the path.
+* This verifies that the code works as expected by making sure that enemies are on the path when they spawn and that they stay on the path afterwards.
+
+monolithCollisionTest()
+* This will test whether enemies are triggering a collision with the monolith
+* This will test the interaction between the enemy model class and the monolith model class as only the enemies should interact with the monolith.
+* Since only the enemies have interactions with the monolith, the activation of the enemy colliding with the monolith will indicate the enemies have properly collided with the monolith.
+
+monolithHealthTest()
+* This will test whether the monolith is losing health.
+* This tests the monolith model
+* It verifies that the code works as expected by making sure that the monolith is losing 1 health every time.
+
+startCombatButtonTest()
+* This will test whether the start combat button is on the game screen. 
+* This will test the game screen component as that screen will hold the startCombat button.
+* If we are testing the existence of the button on the screen, then simply testing for creation of the button within the game screen class will suffice with UI testing for extra support. 
+
+startCombatEnemiesTest() <- related to start combat
+* This will verify that enemies aren’t spawned before start combat button is pressed and verify that enemies are spawned after the start combat button is pressed.
+* This test will involve the game screen, the game controller, and the enemies class as the start combat button on the game screen will activate (through the game controller) the spawning of enemies.
+* This test verifies the functionality of the code as only the start combat button should be the only component to activate the spawning of enemies. If the start combat button being pressed is followed by the enemies spawning, then the code functions correctly. If the enemies are spawned before the start combat button is pressed, then that would verify the access to the method initiating spawning is erred.
+
+gameOverScreenTest()
+* This will test whether the game over screen is properly initialized
+* This will test the interactions between the monolith model class, game controller, and game over screen as the monolith’s health becoming 0 is the trigger that allows the game controller to activate the gameOverScreen.
+* This tests the functionality of the code as the only way for the game over screen to be activated is if the monolith’s health becomes 0. Thus, by giving the game controller access to use the monolith’s methods, the game controller can test to see if the monolith’s health is 0. If so, the game controller activates the game over screen. If the game over screen fails to activate, then it is at fault with the game controller or the game over screen itself.
+
+gameOverRestartButtonTest()
+* This will test whether the restart button takes the player back to the welcome screen.
+* This will test the interaction between the game over screen, the game controller, and the main screen as the game controller responds to user input to click the button on the game over screen that will take the user to the main screen.
+* This test will ensure the code functions correctly as the correctly implemented game over screen will fire the activation to the main screen (with the aid of the game controller) which will show up in the UI as well as the functionality tests in the code    
+
+gameOverCloseButtonTest()
+* This will test whether the close button will close the application (not sure if we can test this?)
+* This will test the interaction between the game over screen and the game controller as the game controller allows the user to press the button to close the game.
+* This test will ensure the code functions as we want to see if pressing the close game button on the game over screen shuts down the entire game and not if the user is brought to another screen.
